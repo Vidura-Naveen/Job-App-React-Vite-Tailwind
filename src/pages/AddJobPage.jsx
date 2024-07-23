@@ -1,17 +1,21 @@
 import React from 'react'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
-const AddJobPage = () => {
+const AddJobPage = ({addJobSubmit}) => {
 
   const [title,setTitle]=useState('');
   const [type,setType]=useState('Full-Time');
   const [location,setLocation]=useState('');
   const [description,setDescription]=useState('');
-  const [Salary,setSalary]=useState('Under $50K');
+  const [salary,setSalary]=useState('Under $50K');
   const [companyName,setCompanyName]=useState('');
   const [CompanyDescription,setCompanyDescription]=useState('');
-  const [Phone,setPhone]=useState('');
-  const [Email,setEmail]=useState('');
+  const [contactPhone,setPhone]=useState('');
+  const [contactEmail,setEmail]=useState('');
+
+  const  navigate = useNavigate();
 
   const submitForm = (e)=>{
     e.preventDefault();
@@ -21,15 +25,17 @@ const AddJobPage = () => {
       type,
       location,
       description,
-      Salary,
+      salary,
       company:{
         name: companyName,
-        companydescription: CompanyDescription,
-        Email,
-        Phone
+        description: CompanyDescription,
+        contactEmail,
+        contactPhone
       }
     }
-    console.log(newJob)
+    addJobSubmit(newJob);
+    toast.success('Job Added Sucessfully !!');
+    return navigate('/jobs')
   }
 
   return (
@@ -102,7 +108,7 @@ const AddJobPage = () => {
                 name="salary"
                 className="border rounded w-full py-2 px-3"
                 required
-                value={Salary}
+                value={salary}
                 onChange={(e)=> setSalary(e.target.value)}
               >
                 <option value="Under $50K">Under $50K</option>
@@ -182,7 +188,7 @@ const AddJobPage = () => {
                 className="border rounded w-full py-2 px-3"
                 placeholder="Email address for applicants"
                 required
-                value={Email}
+                value={contactEmail}
                 onChange={(e)=> setEmail(e.target.value)}
               />
             </div>
@@ -198,7 +204,7 @@ const AddJobPage = () => {
                 name="contact_phone"
                 className="border rounded w-full py-2 px-3"
                 placeholder="Optional phone for applicants"
-                value={Phone}
+                value={contactPhone}
                 onChange={(e)=>setPhone(e.target.value)}
               />
             </div>

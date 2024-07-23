@@ -1,4 +1,5 @@
-{ "jobs" :[
+{
+  "jobs": [
     {
       "id": "1",
       "title": "Senior React Developer",
@@ -59,8 +60,8 @@
       "id": "5",
       "title": "Full Stack React Developer",
       "type": "Full-Time",
-      "description": "Exciting opportunity for a Full-Time Front-End Developer in bustling Atlanta, GA. We are seeking a talented individual with a passion for building elegant and scalable web applications. Join our team and make an impact!",
       "location": "Atlanta, GA",
+      "description": "Exciting opportunity for a Full-Time Front-End Developer in bustling Atlanta, GA. We are seeking a talented individual with a passion for building elegant and scalable web applications. Join our team and make an impact!",
       "salary": "$90K - $100K",
       "company": {
         "name": "Browning Technologies",
@@ -73,8 +74,8 @@
       "id": "6",
       "title": "React Native Developer",
       "type": "Full-Time",
-      "description": "Join our team as a Front-End Developer in beautiful Portland, OR. We are looking for a skilled and enthusiastic individual to help us create innovative web solutions. Competitive salary and great benefits package available.",
       "location": "Portland, OR",
+      "description": "Join our team as a Front-End Developer in beautiful Portland, OR. We are looking for a skilled and enthusiastic individual to help us create innovative web solutions. Competitive salary and great benefits package available.",
       "salary": "$100K - $110K",
       "company": {
         "name": "Port Solutions INC",
